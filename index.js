@@ -17,22 +17,34 @@ function appendList() {
     });
 };
 
+//Last thing I need to do is change the delete function to only fire on the delete button
 function checkItem() {
-    $('.shopping-item-toggle').click(function() {
+    $('.shopping-list').on('click', '.shopping-item-controls', '.shopping-item-toggle', function() {
         $(this).closest('div').prev('span').toggleClass('shopping-item__checked');
     });
 };
 
 function deleteItem() {
-    $('.shopping-item-delete').click(function() {
+    $('.shopping-list').on('click', '.shopping-item-controls', '.shopping-item-delete', function() {
         $(this).closest('li').remove();
     });
 };
+
+/*function itemControls() {
+    $('.shopping-list').on('click', '.shopping-item-controls', 'button', function() {
+        if ($(this).hasClass('shopping-item-toggle') === true) {
+            checkItem();
+        } else if ($(this).hasClass('shopping-item-delete') === true) {
+            deleteItem();
+        };
+    });
+};*/
 
 function initJQuery() {
     appendList();
     checkItem();
     deleteItem();
+    //itemControls();
 };
 
 
