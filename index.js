@@ -19,13 +19,13 @@ function appendList() {
 
 //Last thing I need to do is change the delete function to only fire on the delete button
 function checkItem() {
-    $('.shopping-list').on('click', '.shopping-item-controls', '.shopping-item-toggle', function() {
+    $('.shopping-list').on('click', '.shopping-item-toggle', function() {
         $(this).closest('div').prev('span').toggleClass('shopping-item__checked');
     });
 };
 
 function deleteItem() {
-    $('.shopping-list').on('click', '.shopping-item-controls', '.shopping-item-delete', function() {
+    $('.shopping-list').on('click', '.shopping-item-delete', function() {
         $(this).closest('li').remove();
     });
 };
